@@ -780,6 +780,14 @@ section {
   width: 609px !important;
   min-width: 609px !important ;
 }
+.brand_slider .slider__item.main_slide {
+  padding: 30px !important;
+}
+@media (max-width: 1023px) {
+  .brand_slider .slider__item.main_slide {
+    padding: 24px !important;
+  }
+}
 @media (max-width: 1439px) {
   .slider__item.main_slide {
     width: 482px !important;
@@ -870,9 +878,9 @@ section {
     overflow: hidden;
     gap: 0;
   }
-  .efficiency__images.swiper {
+  /* .efficiency__images.swiper {
     padding: 0 0 40px 0;
-  }
+  } */
 }
 .efficiency__images .swiper-wrapper {
   display: flex;
@@ -915,6 +923,7 @@ section {
   font-family: "SONGER Condensed";
   font-size: 128px;
   font-weight: 900;
+  line-height: 110%;
 }
 @media (max-width: 1439px) {
   .efficiency__images__item__text div {
