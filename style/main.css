@@ -64,8 +64,7 @@ main {
   max-width: 1440px;
   margin: 0 auto;
   padding: 30px 40px;
-  position: relative;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 @media (max-width: 1439px) {
   main {
@@ -171,7 +170,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  margin: 0 auto;
+  max-width: 1360px;
+  width: calc(100% - 40px);
   padding: 16px 40px;
   background-color: var(--color-white);
   border-radius: var(--border-radius-large);
@@ -179,22 +180,29 @@ header {
   top: 30px;
   z-index: 100;
   box-shadow: 21px 4px 14.7px 0 rgba(0, 0, 0, 0.08);
+  margin-bottom: 100px;
 }
 @media (max-width: 1439px) {
   header {
     padding: 12px 32px;
+    width: calc(100% - 64px);
+    margin-bottom: 60px;
   }
 }
 @media (max-width: 1023px) {
   header {
     top: 24px;
     padding: 8px 24px;
+    width: calc(100% - 48px);
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 767px) {
   header {
     padding: 8px 12px;
     top: 11px;
+    width: calc(100% - 32px);
+    margin-bottom: 20px;
   }
 }
 .header__logo {
@@ -207,11 +215,13 @@ header {
 }
 .header__button {
   width: 210px;
+  text-transform: uppercase;
 }
 @media (max-width: 1023px) {
   .header__button {
     width: 160px;
     height: 28px;
+    font-size: 12px;
   }
 }
 
@@ -673,6 +683,15 @@ section {
   background-image: url("../imgs/waves.svg");
   z-index: -1;
 }
+.criteria::before {
+  height: 102%;
+}
+@media (max-width: 1439px) {
+  .goal::before,
+  .criteria::before {
+    height: 110%;
+  }
+}
 .information__container::before {
   left: 0;
   width: 100%;
@@ -757,7 +776,7 @@ section {
   }
 }
 .slider__item.main_slide {
-  padding: 0;
+  padding: 0 !important;
   width: 609px !important;
   min-width: 609px !important ;
 }
@@ -1166,6 +1185,15 @@ section {
     font-size: 28px;
   }
 }
+.criteria .row {
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .criteria .row {
+    align-items: flex-start;
+  }
+}
+
 .supply ul,
 .criteria ul {
   display: flex;
@@ -1304,7 +1332,12 @@ section {
 }
 @media (max-width: 1439px) {
   .delivery__content::before {
-    height: 95%;
+    height: 120%;
+  }
+}
+@media (max-width: 1023px) {
+  .delivery__content::before {
+    height: 105%;
   }
 }
 @media (max-width: 767px) {
@@ -1628,7 +1661,7 @@ section {
     grid-column: 1 / 3;
   }
   .partners__item.empty {
-    display: none;
+    display: none !important;
   }
 }
 .partners__item ul,
