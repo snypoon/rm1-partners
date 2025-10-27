@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".slider__container", {
     slidesPerView: 1,
     spaceBetween: 20,
-    freeMode: true,
     loop: true,
+    loopAdditionalSlides: 2,
     breakpoints: {
       767: {
         slidesPerView: 3,
         spaceBetween: 20,
-        freeMode: true,
         loop: true,
+        loopAdditionalSlides: 2,
       },
     },
   });
