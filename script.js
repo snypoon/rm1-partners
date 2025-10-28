@@ -4,12 +4,20 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 20,
     loop: true,
     loopAdditionalSlides: 2,
+    pagination: {
+      el: ".slider .swiper-pagination",
+      clickable: true,
+    },
     breakpoints: {
       767: {
         slidesPerView: 3,
         spaceBetween: 20,
         loop: true,
         loopAdditionalSlides: 2,
+        pagination: {
+          el: ".slider .swiper-pagination",
+          clickable: true,
+        },
       },
     },
   });
@@ -17,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Инициализация слайдера для блока efficiency
   const efficiencySwiper = new Swiper(".efficiency-swiper", {
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 80,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -25,6 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
     breakpoints: {
       758: {
         slidesPerView: 3,
+        spaceBetween: 40,
+        enabled: false,
+      },
+      1023: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+        enabled: false,
+      },
+      1439: {
+        slidesPerView: 3,
+        spaceBetween: 80,
         enabled: false,
       },
     },

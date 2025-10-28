@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
 // Получение данных формы
 $fio = isset($_POST['fio']) ? trim($_POST['fio']) : '';
+$phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $experience = isset($_POST['experience']) ? trim($_POST['experience']) : '';
 $industry = isset($_POST['industry']) ? trim($_POST['industry']) : '';
@@ -50,6 +51,10 @@ $message = "
         <tr>
             <td><strong>ФИО:</strong></td>
             <td>" . htmlspecialchars($fio) . "</td>
+        </tr>
+        <tr>
+            <td><strong>Телефон:</strong></td>
+            <td>" . htmlspecialchars($phone) . "</td>
         </tr>
         <tr>
             <td><strong>Email:</strong></td>
