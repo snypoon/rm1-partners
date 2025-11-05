@@ -49,16 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  if (window.innerWidth < 758) {
-    const partnersSwiper = new Swiper(".partners-swiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+  const partnersSwiper = new Swiper(".partners-swiper", {
+    breakpoints: {
+      767: {
+        slidesPerView: "auto",
+        spaceBetween: "auto",
+        enabled: false,
       },
-    });
-  }
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
   // Управление попапом
   const popup = document.getElementById("popup");
