@@ -251,7 +251,8 @@ h1 {
 }
 @media (max-width: 767px) {
   h1 {
-    font-size: 40px;
+    font-size: 50px;
+    line-height: 50px;
   }
 }
 h2 {
@@ -274,7 +275,7 @@ h2 {
 }
 @media (max-width: 767px) {
   h2 {
-    font-size: 36px;
+    font-size: 42px;
   }
 }
 h3 {
@@ -298,8 +299,8 @@ h3 {
 }
 @media (max-width: 767px) {
   h3 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 26px;
+    line-height: 32px;
   }
 }
 h4 {
@@ -358,7 +359,7 @@ span {
 }
 @media (max-width: 767px) {
   span {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -461,7 +462,7 @@ section {
 }
 @media (max-width: 767px) {
   .hero {
-    height: 132px;
+    height: 160px;
   }
 }
 
@@ -510,7 +511,7 @@ section {
 @media (max-width: 767px) {
   .row {
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
   }
 }
 .col {
@@ -528,6 +529,11 @@ section {
 @media (max-width: 1023px) {
   .col {
     gap: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .col {
+    gap: 20px;
   }
 }
 
@@ -982,6 +988,11 @@ section {
     gap: 40px;
   }
 }
+@media (max-width: 767px) {
+  .information {
+    gap: 20px;
+  }
+}
 .information h2 {
   padding-left: 40px;
 }
@@ -1028,7 +1039,11 @@ section {
     gap: 40px;
   }
 }
-
+@media (max-width: 767px) {
+  .information .row {
+    gap: 20px;
+  }
+}
 .together {
   gap: 0;
   padding: 0;
@@ -1039,6 +1054,11 @@ section {
 @media (max-width: 1439px) {
   .together h2 {
     margin-bottom: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .together h2 {
+    margin-bottom: 20px;
   }
 }
 .together .row {
@@ -1218,6 +1238,12 @@ section {
     font-size: 28px;
   }
 }
+@media (max-width: 767px) {
+  .supply h3 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
 .criteria .row {
   align-items: center;
 }
@@ -1289,6 +1315,11 @@ section {
   background-size: contain;
 }
 @media (max-width: 767px) {
+  .menu__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   .menu__content::before {
     content: none;
   }
@@ -1330,6 +1361,11 @@ section {
 @media (max-width: 1439px) {
   .delivery {
     gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .delivery {
+    gap: 20px;
   }
 }
 .delivery {
@@ -1633,6 +1669,11 @@ section {
 @media (max-width: 1023px) {
   .partners {
     gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .partners {
+    gap: 20px;
   }
 }
 .partners h2 {
