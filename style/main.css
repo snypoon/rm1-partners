@@ -111,6 +111,7 @@ label {
   text-align: left;
   margin-bottom: 5px;
   font-family: "Inter 18pt", sans-serif;
+  font-size: 14px;
 }
 label.required:after {
   content: "*";
@@ -132,6 +133,12 @@ textarea {
   font-size: 12px;
   font-family: "Inter 18pt", sans-serif;
   transition: all 0.3s ease;
+}
+@media (max-width: 767px) {
+  input,
+  textarea {
+    margin-bottom: 16px;
+  }
 }
 textarea {
   height: 72px;
@@ -2001,6 +2008,12 @@ section {
   flex-shrink: 0;
   line-height: 0 !important;
 }
+@media (max-width: 767px) {
+  .popup__close {
+    top: 10px;
+    right: 10px;
+  }
+}
 
 .popup__close:hover {
   background-color: var(--color-primary);
@@ -2016,12 +2029,6 @@ section {
 .popup button {
   background-color: var(--color-primary);
   color: var(--color-white);
-  margin-top: 20px;
-}
-@media (max-width: 767px) {
-  .popup button {
-    margin-top: 10px;
-  }
 }
 
 /* Адаптивность для мобильных устройств */
@@ -2029,6 +2036,7 @@ section {
   .popup__content {
     padding: 20px;
     margin: 10px;
+    padding-top: 30px;
   }
 }
 
