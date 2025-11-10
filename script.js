@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
           el: ".slider .swiper-pagination",
           clickable: true,
         },
+        navigation: {
+          nextEl: ".slider .swiper-button-next",
+          prevEl: ".slider .swiper-button-prev",
+        },
       },
     },
   });
