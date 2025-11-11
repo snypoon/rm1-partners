@@ -1,4 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Функция для применения маски телефона
+  function applyPhoneMask(phoneInput) {
+    phoneInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, ''); // Удаляем все нецифровые символы
+      
+      if (value.length > 0) {
+        if (value[0] !== '7') {
+          value = '7' + value;
+        }
+        
+        let formattedValue = '+7';
+        if (value.length > 1) {
+          formattedValue += ' (' + value.substring(1, 4);
+        }
+        if (value.length >= 5) {
+          formattedValue += ') ' + value.substring(4, 7);
+        }
+        if (value.length >= 8) {
+          formattedValue += '-' + value.substring(7, 9);
+        }
+        if (value.length >= 10) {
+          formattedValue += '-' + value.substring(9, 11);
+        }
+        
+        e.target.value = formattedValue;
+      }
+    });
+    
+    phoneInput.addEventListener('keydown', function(e) {
+      // Разрешаем: backspace, delete, tab, escape, enter
+      if ([8, 9, 27, 13, 46].indexOf(e.keyCode) !== -1 ||
+          // Разрешаем: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+          (e.keyCode === 65 && e.ctrlKey === true) ||
+          (e.keyCode === 67 && e.ctrlKey === true) ||
+          (e.keyCode === 86 && e.ctrlKey === true) ||
+          (e.keyCode === 88 && e.ctrlKey === true)) {
+        return;
+      }
+      // Разрешаем только цифры
+      if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+      }
+    });
+  }
+
+  // Применяем маску к полям телефона
+  const phoneInput = document.getElementById('phone');
+  const popupPhoneInput = document.getElementById('popup-phone');
+  
+  if (phoneInput) {
+    applyPhoneMask(phoneInput);
+  }
+  
+  if (popupPhoneInput) {
+    applyPhoneMask(popupPhoneInput);
+  }
+
   const swiper = new Swiper(".slider__container", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -17,10 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
         pagination: {
           el: ".slider .swiper-pagination",
           clickable: true,
-        },
-        navigation: {
-          nextEl: ".slider .swiper-button-next",
-          prevEl: ".slider .swiper-button-prev",
         },
       },
     },
@@ -53,21 +106,16 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  const partnersSwiper = new Swiper(".partners-swiper", {
-    breakpoints: {
-      767: {
-        slidesPerView: "auto",
-        spaceBetween: "auto",
-        enabled: false,
+  if (window.innerWidth < 758) {
+    const partnersSwiper = new Swiper(".partners-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
-    },
-    slidesPerView: 1,
-    spaceBetween: 20,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+    });
+  }
 
   // Управление попапом
   const popup = document.getElementById("popup");
